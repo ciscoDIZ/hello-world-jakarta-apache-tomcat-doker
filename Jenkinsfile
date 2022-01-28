@@ -3,10 +3,15 @@ pipeline {
 
     stages {
         state('Build') {
-            sh 'mvn clean install'
+            steps {
+                sh 'mvn clean install'
+            }
+            
         }
         stage('Deploy') {
-            sh 'docker-compose up -d --build'
+            steps {
+                sh 'docker-compose up -d --build'
+            }
         }
     }
 }
