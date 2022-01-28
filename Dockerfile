@@ -1,6 +1,6 @@
 FROM jboss/wildfly
 
-ARG WAR_FILE=target/*.war
+ARG WAR_FILE=/var/lib/jenkins/workspace/jakarta_pipeline_docker/target/*.war
 
 ADD ${ARG} /opt/jboss/wildfly/standalone/deployments/
 
