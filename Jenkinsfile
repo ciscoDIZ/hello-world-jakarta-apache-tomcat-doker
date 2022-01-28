@@ -10,7 +10,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'docker-compose up -d --build'
+                sh 'docker build -t hello-wolrd-jakarta .'
+                sh 'docker run -d --rm -p 8082:8080 hello-wolrd-jakarta'
             }
         }
         stage('Test Integration') {
